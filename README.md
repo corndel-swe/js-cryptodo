@@ -53,7 +53,7 @@ Try the following:
 1. Close and re-open your browser to clear the session, allowing you to log in
    as another user
 
-1. Visit `/users` and create a new user using the form - take a look at your new
+1. Visit `/users/new` and create a new user using the form - take a look at your new
    user in the database
 
 ## Moving on
