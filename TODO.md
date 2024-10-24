@@ -68,11 +68,11 @@ Finally, let's add a new page allowing the logged in user to create a new todo.
       username and password of the creating user, much in the same way that
       `GET /todos` does (in fact, you could probably copy some of the code).
 
-  > [!IMPORTANT]
-  >
-  > If authentication fails, set the status to `401` and set the
-  > `WWW-Authenticate` header to `Basic realm="cryptodo"`. This is what makes
-  > the browser show the login dialogue.
+      > [!IMPORTANT]
+      >
+      > If authentication fails, set the status to `401` and set the
+      > `WWW-Authenticate` header to `Basic realm="cryptodo"`. This is what makes the
+      > browser show the login dialogue.
 
 - [ ] Attach the `createTodo` function to the `POST /todos` route in the
       `todo.routes.js` file.
