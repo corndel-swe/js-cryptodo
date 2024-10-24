@@ -102,8 +102,8 @@ Then we could use it like this:
 
 ```js
 // routes/todo.routes.js
-app.get('/todos', protected, renderUserTodos)
-app.post('/todos', protected, createTodo)
+app.get('/todos', protect, renderUserTodos)
+app.post('/todos', protect, createTodo)
 ```
 
 This is a powerful pattern which makes it easy to password-protect any endpoint
