@@ -1,4 +1,4 @@
-import { db } from '../../src/config.js'
+import { db } from '../config.js'
 import bcrypt from 'bcrypt'
 
 const users = await db.raw('SELECT id, password FROM users')

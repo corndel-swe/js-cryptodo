@@ -89,11 +89,11 @@ which checks the user password gets repeated in `renderUserTodos` and again in
 This could be extracted to a
 [middleware function](https://expressjs.com/en/guide/using-middleware.html).
 
-If we named our function `protected`, it might look like this:
+If we named our function `protect`, it might look like this:
 
 ```js
 // middleware/protected.js
-const protected = (req, res, next) => {
+const protect = (req, res, next) => {
   // TODO: check the password
 }
 ```
@@ -102,8 +102,8 @@ Then we could use it like this:
 
 ```js
 // routes/todo.routes.js
-app.get('/todos', protected, renderUserTodos)
-app.post('/todos', protected, createTodo)
+app.get('/todos', protect, renderUserTodos)
+app.post('/todos', protect, createTodo)
 ```
 
 This is a powerful pattern which makes it easy to password-protect any endpoint
