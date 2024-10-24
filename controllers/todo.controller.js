@@ -8,15 +8,11 @@ export const renderUserTodos = async (req, res) => {
 
     // Get the user from the database
     const user = await db('users').where({ username }).first()
-
-    if (!user) {
-      throw new Error(`User ${username} not found.`)
-    }
+    if (!user) throw new Error(`User ${username} not found.`)
 
     // Check if the password is correct
-    if (user.password !== password) {
-      throw new Error('Password invalid.')
-    }
+    const result = user.password === password
+    if (!result) throw new Error('Password invalid.')
 
     // Get the todos for the user
     const todos = await db('todos').where({ user_id: user.id })
