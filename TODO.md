@@ -89,11 +89,11 @@ which checks the user password gets repeated in `renderUserTodos` and again in
 This could be extracted to a
 [middleware function](https://expressjs.com/en/guide/using-middleware.html).
 
-If we named our function `protected`, it might look like this:
+If we named our function `protect`, it might look like this:
 
 ```js
-// middleware/protected.js
-const protected = (req, res, next) => {
+// middleware/protect.js
+const protect = (req, res, next) => {
   // TODO: check the password
 }
 ```
