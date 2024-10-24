@@ -1,30 +1,61 @@
+<p align="center">
+  <img width="200px" src="./src/public/logo.png" />
+</p>
+
 # Cryptodo
 
 Welcome to Cryptodo! The security conscious todo list you know you can trust.
 
 Sort of.
 
-## Background
+## Hashing libraries
 
-We tried. We really did. But our todo list application is just chock full of
-security problems.
+This workshop makes frequent use of hashing. The recommended libraries for each
+language are given below:
 
-Say, you look like a developer. Maybe you can help us out!
+| language   | library                                                      |
+| ---------- | ------------------------------------------------------------ |
+| JavaScript | [bcrypt](https://www.npmjs.com/package/bcrypt#usage)         |
+| Java       | [bcrypt](https://github.com/patrickfav/bcrypt)               |
+| Python     | [bcrypt](https://github.com/pyca/bcrypt#usage)               |
+| C#         | [bcrypt](https://github.com/BcryptNet/bcrypt.net#how-to-use) |
 
-## Todo
+## Getting started
 
-### Hash the passwords!
+1. Clone the repo so you have it locally
 
-I'm pretty sure the user sign up endpoint isn't actually hashing passwords
-before saving them. Please make sure passwords get hashed!
+2. Run `npm install` to get the dependencies
 
-### Fix access control
+3. Run `npm run db:reset` to migrate and seed the database
 
-Passwords are being hashed. Great! But now users can't read their todos any
-more. Not great! Let's fix that.
+4. Run `npm run dev` to start the development server
 
-### Token based access
+5. Visit [localhost:5123](localhost:5123) in your browser to see the home page
 
-Passwords are getting hashed now, which is fantastic. But we're still relying on
-basic auth, which means users must send their username and password with every
-request. Let's implement JSON Web Tokens.
+## Exploring the project
+
+The website has only 3 pages:
+
+- `/` the home page
+
+- `/users/new` a sign up page
+
+- `/todos` a password protected list of todos
+
+Try the following:
+
+1. Inspect the database and choose a username and password combination you'd
+   like to log in as
+
+1. Visit `/todos` and input the username and password, you should now see their
+   todos
+
+1. Close and re-open your browser to clear the session, allowing you to log in
+   as another user
+
+1. Visit `/users` and create a new user using the form - take a look at your new
+   user in the database
+
+## Moving on
+
+Once you've had a look around, move on to `TODO.md` to find your instructions.
