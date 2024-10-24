@@ -80,7 +80,7 @@ Finally, let's add a new page allowing the logged in user to create a new todo.
 Try out your form. Make sure the todo gets created and is correctly associated
 with the logged in user.
 
-## Extension: middleware
+## :gem: Extension: middleware
 
 If you get through everything and need an extra challenge, notice that the code
 which checks the user password gets repeated in `renderUserTodos` and again in
