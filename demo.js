@@ -1,15 +1,24 @@
 import bcrypt from 'bcrypt'
 
-const password = 'supersecret'
+// Encode credentials into a basic auth header
+const credential = 'imauser:supersecret'
+const header = `Basic ${btoa(credential)}`
+console.log(header)
 
-// TODO: Hash the password
-const hashed = await bcrypt.hash(password, 10)
-console.log(hashed)
+// Decode the basic auth header
+const base64 = header.split(' ')[1]
+const [username, password] = atob(base64).split(':')
+console.log(username)
+console.log(password)
 
-// TODO: Compare the hash with wrong password
-const result1 = await bcrypt.compare('monkeywrench', hashed)
-console.log(result1)
+// Hash the password
+const hash = await bcrypt.hash(password, 10)
+console.log(hash)
 
-// TODO: Compare the hash with correct password
-let result2 = await bcrypt.compare('supersecret', hashed)
+// Compare passwords
+const result = await bcrypt.compare(password, hash)
+console.log(result)
+
+// Compare wrong password
+const result2 = await bcrypt.compare('wrong', hash)
 console.log(result2)
