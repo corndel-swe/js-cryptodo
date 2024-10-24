@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200px" src="/public/logo.png" />
+  <img width="200px" src="/public/x_logo.png" />
 </p>
 
 # Cryptodo
